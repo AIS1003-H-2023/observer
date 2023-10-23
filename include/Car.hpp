@@ -5,7 +5,6 @@
 #include "Observer.hpp"
 #include "threepp/math/Vector3.hpp"
 
-#include <memory>
 #include <vector>
 
 // Just some class demonstrating that the Model can (should be) be decoupled from the visualisation.
@@ -44,9 +43,9 @@ public:
         }
     }
 
-    void addObserver(std::unique_ptr<Observer> observer) {
+    void addObserver(Observer* observer) {
 
-        observers_.emplace_back(std::move(observer));
+        observers_.emplace_back(observer);
     }
 
 private:
@@ -54,7 +53,7 @@ private:
     threepp::Vector3 size_;
     threepp::Vector3 position_;
 
-    std::vector<std::unique_ptr<Observer>> observers_;
+    std::vector<Observer*> observers_; // non-owning list of observers
 };
 
 #endif//THREEPP_VCPKG_DEMO_CAR_HPP
