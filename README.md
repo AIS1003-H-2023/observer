@@ -1,7 +1,6 @@
 # Separating concerns
 
-This is a standalone demo project that uses `threepp` as a dependency 
-through a custom [vcpkg](https://vcpkg.io/en/index.html) registry located [here](https://github.com/Ecos-platform/vcpkg-registry).
+Demo on separation of concerns and threepp
 
 ### Building
 As `vcpkg` is used, you need to tell CMake about it in order for dependency resolution to work: 
