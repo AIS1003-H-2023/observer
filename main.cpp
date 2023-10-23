@@ -65,8 +65,8 @@ int main() {
     auto carMesh = Mesh::create(geometry, material);
     scene->add(carMesh);
 
-    auto carObserver = std::make_unique<CarObserver>(*carMesh);
-    car.addObserver(std::move(carObserver));
+    CarObserver carObserver(*carMesh);
+    car.addObserver(&carObserver);
 
     Clock clock;
     canvas.animate([&] {
