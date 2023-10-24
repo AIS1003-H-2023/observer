@@ -7,7 +7,7 @@
 
 #include <vector>
 
-// Just some class demonstrating that the Model can (should be) be decoupled from the visualisation.
+// Just some class demonstrating that the Model can (should) be decoupled from the visualisation.
 class Car {
 
 public:
@@ -37,7 +37,7 @@ public:
             }
         }
 
-        for (auto& observer : observers_) {
+        for (Observer* observer : observers_) {
 
             observer->onChanged(*this);
         }
